@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfc6a245c0664bff949881a593002ef1" Name="Diagram1">
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Client" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Employee" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.EmployeeService" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Gender" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Position" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Product" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.ProductService" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Provider" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Service" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Voucher" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.VoucherProduct" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.VoucherService" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Client__IDGender__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Voucher__IDClien__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Employee__IDGend__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Employee__IDPosi__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__EmployeeS__IDEmp__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Voucher__IDEmplo__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__EmployeeS__IDSer__29221CFB" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__Product__IDProvi__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__ProductSe__IDPro__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherPr__IDPro__30C33EC3" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__ProductSe__IDSer__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherSe__IDSer__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherPr__IDVou__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherSe__IDVou__2DE6D218" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

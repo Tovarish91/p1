@@ -27,5 +27,19 @@ namespace p1.Pages
             InitializeComponent();
             DG.ItemsSource = Context.Client.ToList();
         }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem mi = (MenuItem)sender;
+            switch (mi.Header)
+            {
+                case "ID":
+                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.IDClient);
+                    break;
+                case "Patronimic":
+                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.Patronimic);
+                    break;
+            }
+        }
     }
 }

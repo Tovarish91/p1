@@ -32,6 +32,7 @@
         <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherSe__IDSer__2CF2ADDF" ManuallyRouted="false" />
         <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherPr__IDVou__31B762FC" ManuallyRouted="false" />
         <AssociationConnector Association="ShurupovAvtoServModel.FK__VoucherSe__IDVou__2DE6D218" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ShurupovAvtoServModel.Log" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

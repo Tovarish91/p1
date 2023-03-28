@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
     <Grid Background="#FF97825D">
+        <TextBlock Text="Автосервис"
+                           HorizontalAlignment="Center"
+                           FontSize="45"
+                           FontWeight="DemiBold"
+                           FontFamily="Times New Roman"
+                           ></TextBlock>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Авторизация"
                            HorizontalAlignment="Center"
@@ -36,5 +42,9 @@
                        FontFamily="Times New Roman"
                        HorizontalAlignment="Center" MouseLeftButtonUp="LbReg_MouseLeftButtonUp"></Label>
         </StackPanel>
+        <Label x:Name="LbTime" 
+               VerticalAlignment="Bottom" 
+               HorizontalAlignment="Center"
+               FontSize="20"></Label>
     </Grid>
 </Window>

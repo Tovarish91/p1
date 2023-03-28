@@ -86,6 +86,9 @@
     <Compile Include="DataBase\Gender.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Log.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\MaxTotalCost_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -143,20 +146,38 @@
     <Compile Include="Pages\pgClient.xaml.cs">
       <DependentUpon>pgClient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PgEmployee.xaml.cs">
-      <DependentUpon>PgEmployee.xaml</DependentUpon>
+    <Compile Include="Pages\pgEmployee.xaml.cs">
+      <DependentUpon>pgEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PgEmployeeService.xaml.cs">
-      <DependentUpon>PgEmployeeService.xaml</DependentUpon>
+    <Compile Include="Pages\pgEmployeeService.xaml.cs">
+      <DependentUpon>pgEmployeeService.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PgGender.xaml.cs">
-      <DependentUpon>PgGender.xaml</DependentUpon>
+    <Compile Include="Pages\pgGender.xaml.cs">
+      <DependentUpon>pgGender.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PgPosition.xaml.cs">
-      <DependentUpon>PgPosition.xaml</DependentUpon>
+    <Compile Include="Pages\pgPosition.xaml.cs">
+      <DependentUpon>pgPosition.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PgService.xaml.cs">
-      <DependentUpon>PgService.xaml</DependentUpon>
+    <Compile Include="Pages\pgProduct.xaml.cs">
+      <DependentUpon>pgProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgProductService.xaml.cs">
+      <DependentUpon>pgProductService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgProvider.xaml.cs">
+      <DependentUpon>pgProvider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgService.xaml.cs">
+      <DependentUpon>pgService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgVoucher.xaml.cs">
+      <DependentUpon>pgVoucher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgVoucherProduct.xaml.cs">
+      <DependentUpon>pgVoucherProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgVoucherService.xaml.cs">
+      <DependentUpon>pgVoucherService.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShurupovAvtoServDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -174,23 +195,47 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PgEmployee.xaml">
+    <Page Include="Pages\pgEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PgEmployeeService.xaml">
+    <Page Include="Pages\pgEmployeeService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PgGender.xaml">
+    <Page Include="Pages\pgGender.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PgPosition.xaml">
+    <Page Include="Pages\pgPosition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PgService.xaml">
+    <Page Include="Pages\pgProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgProductService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgProvider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgVoucher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgVoucherProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgVoucherService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

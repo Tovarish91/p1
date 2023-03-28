@@ -8,7 +8,13 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PgEmployeeService">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <DataGrid x:Name="DG" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IDEmployeeService}"/>
+                <DataGridTextColumn Header="IDService" Binding="{Binding IDService}"/>
+                <DataGridTextColumn Header="IDEmployee" Binding="{Binding IDEmployee}"/>
+                </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

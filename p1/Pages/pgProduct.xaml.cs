@@ -18,14 +18,14 @@ using static p1.Classes.clEntity;
 namespace p1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PgEmployeeService.xaml
+    /// Логика взаимодействия для pgProduct.xaml
     /// </summary>
-    public partial class PgEmployeeService : Page
+    public partial class pgProduct : Page
     {
-        public PgEmployeeService()
+        public pgProduct()
         {
             InitializeComponent();
-            DG.ItemsSource = Context.EmployeeService.ToList();
+            DG.ItemsSource = Context.Product.ToList();
         }
     }
 }

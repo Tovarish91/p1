@@ -31,6 +31,9 @@ namespace p1.DataBase
         public int Phone { get; set; }
         public string Email { get; set; }
         public string Adress { get; set; }
+        public string Role { get; set; }
+        public string Password { get; set; }
+        public string Active { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Position Position { get; set; }

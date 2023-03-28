@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using p1.Classes;
+using static p1.Classes.clEntity;
 
 namespace p1.Pages
 {
@@ -23,6 +25,7 @@ namespace p1.Pages
         public PgGender()
         {
             InitializeComponent();
+            DG.ItemsSource = Context.Gender.ToList();
         }
     }
 }

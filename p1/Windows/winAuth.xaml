@@ -13,12 +13,15 @@
                            FontWeight="DemiBold"
                            FontFamily="Times New Roman"
                            ></TextBlock>
+       
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="C:\Users\Practice.OP9_WinDC.002\source\repos\p1\p1\Resourses\phyprukp1.bmp" Width="150"></Image>
             <TextBlock Text="Авторизация"
-                           HorizontalAlignment="Center"
-                           FontSize="25"
-                           FontWeight="DemiBold"
-                           FontFamily="Times New Roman"
+                       HorizontalAlignment="Center"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Times New Roman"
+                       Margin="0 40 0 0"
                            ></TextBlock>
             <TextBox Style="{StaticResource TbLogPas}"
                          Text="Логин"

@@ -143,17 +143,26 @@
     <Compile Include="Pages\pgChAddClient.xaml.cs">
       <DependentUpon>pgChAddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\pgChAddEmployee.xaml.cs">
+      <DependentUpon>pgChAddEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\pgClient.xaml.cs">
       <DependentUpon>pgClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pgEmployee.xaml.cs">
       <DependentUpon>pgEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\pgEmployeeHiden.xaml.cs">
+      <DependentUpon>pgEmployeeHiden.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\pgEmployeeService.xaml.cs">
       <DependentUpon>pgEmployeeService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pgGender.xaml.cs">
       <DependentUpon>pgGender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\pgLogs.xaml.cs">
+      <DependentUpon>pgLogs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pgPosition.xaml.cs">
       <DependentUpon>pgPosition.xaml</DependentUpon>
@@ -191,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\pgChAddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\pgClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,11 +212,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\pgEmployeeHiden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\pgEmployeeService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\pgGender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\pgLogs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -313,6 +334,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resourses\phyprukp1.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

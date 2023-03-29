@@ -28,16 +28,24 @@ namespace p1.Pages
             DG.ItemsSource = Context.Client.ToList();
         }
 
-        private void Menu_Click(object sender, RoutedEventArgs e)
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MenuItem mi = (MenuItem)sender;
-            switch (mi.Header)
+            switch (CB.SelectedIndex)
             {
-                case "ID":
+                case 0:
                     DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.IDClient);
                     break;
-                case "Patronimic":
+                case 1:
+                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.FirstName);
+                    break;
+                case 2:
+                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.LastName);
+                    break;
+                case 3:
                     DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.Patronimic);
+                    break;
+                case 4:
+                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.Birthday);
                     break;
             }
         }

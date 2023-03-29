@@ -33,7 +33,7 @@ namespace p1.DataBase
         public string Adress { get; set; }
         public string Role { get; set; }
         public string Password { get; set; }
-        public string Active { get; set; }
+        public bool Active { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Position Position { get; set; }

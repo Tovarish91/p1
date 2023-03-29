@@ -19,32 +19,38 @@
         </Style>
     </Window.Resources>
     <Grid Background="#FF97825D">
-        <Frame HorizontalAlignment="Left" 
+        <Menu VerticalAlignment="Top" Height="20">
+            <MenuItem Header="Tables">
+                <MenuItem Header="Клиент" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Сотрудник" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Продукт" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Поставщик" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Услуга" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Чек" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Гендер" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Сотрудник-Услуга" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Чек-Услуга" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Чек-Продукт" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Продукт-Услуга" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Должность" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Logs" Click="MenuItem_Click"></MenuItem>
+        </Menu>
+
+        <Frame HorizontalAlignment="Center" 
                VerticalAlignment="Center" 
                Name="Frame"
                NavigationUIVisibility="Hidden"></Frame>
 
         <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="Изменить" FontSize="20" Click="Button_Click_1"></Button>
-            <Button Content="Добавить" FontSize="20" Margin="30 0 0 0" Click="Button_Click_2"></Button>
-            <Button Content="Удалить" FontSize="20" Margin="30 0 0 0"></Button>
+            <Button x:Name="btnChange" Content="Изменить" FontSize="20" Click="btnChangeAdd_Click"></Button>
+            <Button x:Name="btnAdd" Content="Добавить" FontSize="20" Margin="30 0 0 0" Click="btnChangeAdd_Click"></Button>
+            <Button x:Name="btnDel" Content="Удалить" FontSize="20" Margin="30 0 0 0" Click="btnDel_Click"></Button>
         </WrapPanel>
 
-        <Button Content="Выход" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Button_Click_3"></Button>
-
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
-            <Button Content="Клиент" Click="Button_Click"></Button>
-            <Button Content="Гендер" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Должность" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Сотрудник" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Сотрудник-Сервис" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Сервис" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Чек" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Чек-Сервис" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Чек-Продукт" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Продукт" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Продукт-Сервис" Margin="0 5 0 0" Click="Button_Click"></Button>
-            <Button Content="Поставщик" Margin="0 5 0 0" Click="Button_Click"></Button>
-        </StackPanel>
+        <Button Content="Выход" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right" 
+                Click="Button_Click_3"></Button>
     </Grid>
 </Window>

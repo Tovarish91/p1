@@ -9,7 +9,7 @@
       Title="PgEmployee">
 
     <Grid Background="White">
-        <DataGrid x:Name="DG" AutoGenerateColumns="False">
+        <DataGrid x:Name="DG" AutoGenerateColumns="False" SelectionChanged="DG_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IDEmployee}"/>
                 <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}"/>
@@ -21,6 +21,9 @@
                 <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Adress" Binding="{Binding Adress}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Acces to system" Binding="{Binding Active}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

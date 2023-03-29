@@ -28,7 +28,6 @@ namespace p1.DataBase
         }
     
         public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<EmployeeService> EmployeeService { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Position> Position { get; set; }
@@ -41,6 +40,7 @@ namespace p1.DataBase
         public virtual DbSet<VoucherProduct> VoucherProduct { get; set; }
         public virtual DbSet<VoucherService> VoucherService { get; set; }
         public virtual DbSet<Log> Log { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
     
         public virtual ObjectResult<ClientAge_Result> ClientAge()
         {

@@ -34,9 +34,7 @@ namespace p1.Pages
 
             var cln = Context.Client.ToList().Where(i => i.IDClient == Convert.ToInt32(tboxID.Text)).FirstOrDefault();
             if (cln != null) 
-            { 
-                
-
+            {
                 MessageBox.Show("!"); 
             }
             else

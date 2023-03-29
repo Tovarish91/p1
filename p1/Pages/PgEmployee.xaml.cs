@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using p1.Classes;
+using p1.Windows;
 using static p1.Classes.clEntity;
 
 namespace p1.Pages
@@ -26,6 +27,13 @@ namespace p1.Pages
         {
             InitializeComponent();
             DG.ItemsSource = Context.Employee.ToList();
+        }
+
+        private void DG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBlock x = DG.Columns[0].GetCellContent(DG.Items[DG.SelectedIndex]) as TextBlock;
+            IDChange = Convert.ToInt32(x?.Text);
+            MessageBox.Show(IDChange.ToString());
         }
     }
 }

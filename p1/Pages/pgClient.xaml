@@ -10,18 +10,17 @@
 
     <Grid Background="White">
         <StackPanel>
-        <Menu>
-            <MenuItem Header="Filter">
-                    <MenuItem Header="ID" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Gender" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="First Name" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Last Name" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Patronimic" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Birthday" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Phone" Click="Menu_Click"></MenuItem>
-                    <MenuItem Header="Email" Click="Menu_Click"></MenuItem>
-            </MenuItem>
-        </Menu>
+            <WrapPanel>
+                <Label Content="Clients" FontSize="15" Margin="0 0 15 0"></Label>
+                <Label Content="Sort by:"></Label>
+            <ComboBox x:Name="CB" SelectionChanged="CB_SelectionChanged" Width="200" HorizontalAlignment="Left">
+                <ComboBoxItem Content="ID"></ComboBoxItem>
+                <ComboBoxItem Content="First Name"></ComboBoxItem>
+                <ComboBoxItem Content="Last Name"></ComboBoxItem>
+                <ComboBoxItem Content="Patronimic"></ComboBoxItem>
+                <ComboBoxItem Content="Birthday"></ComboBoxItem>
+            </ComboBox>
+            </WrapPanel>
             <DataGrid x:Name="DG" AutoGenerateColumns="False" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IDClient}"/>

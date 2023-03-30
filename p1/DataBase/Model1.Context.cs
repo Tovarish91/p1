@@ -39,8 +39,8 @@ namespace p1.DataBase
         public virtual DbSet<Voucher> Voucher { get; set; }
         public virtual DbSet<VoucherProduct> VoucherProduct { get; set; }
         public virtual DbSet<VoucherService> VoucherService { get; set; }
-        public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Log> Log { get; set; }
     
         public virtual ObjectResult<ClientAge_Result> ClientAge()
         {

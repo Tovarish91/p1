@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
     <Grid Background="#FF97825D">
-        <TextBlock Text="Автосервис"
+        <TextBlock Text="Autoservice Old Master"
                            HorizontalAlignment="Center"
                            FontSize="45"
                            FontWeight="DemiBold"
-                           FontFamily="Times New Roman"
+                           FontFamily="Edwardian Script ITC"
                            ></TextBlock>
        
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -47,7 +47,6 @@
         </StackPanel>
         <Label x:Name="LbTime" 
                VerticalAlignment="Bottom" 
-               HorizontalAlignment="Center"
-               FontSize="20"></Label>
+               HorizontalAlignment="Center"></Label>
     </Grid>
 </Window>

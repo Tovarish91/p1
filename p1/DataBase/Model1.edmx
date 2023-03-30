@@ -58,7 +58,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="Login" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Time" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
           <Property Name="EntryTime" Type="datetime" Nullable="false" />
           <Property Name="OutTime" Type="datetime" Nullable="false" />
           <Property Name="LogoutReason" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -778,7 +778,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="Log" EntityType="ShurupovAvtoServModel.Log" />
           <EntitySet Name="Employee" EntityType="ShurupovAvtoServModel.Employee" />
           <AssociationSet Name="FK__Employee__IDGend__5070F446" Association="ShurupovAvtoServModel.FK__Employee__IDGend__5070F446">
             <End Role="Gender" EntitySet="Gender" />
@@ -796,6 +795,7 @@
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Voucher" EntitySet="Voucher" />
           </AssociationSet>
+          <EntitySet Name="Log" EntityType="ShurupovAvtoServModel.Log" />
         </EntityContainer>
         <ComplexType Name="ClientAge_Result">
           <Property Type="String" Name="Имя" Nullable="false" MaxLength="50" />
@@ -826,17 +826,6 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Log">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="Login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Time" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="EntryTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="OutTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LogoutReason" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="IDEmployee" />
@@ -907,6 +896,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EntryTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OutTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogoutReason" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1092,18 +1092,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище ShurupovAvtoServModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище ShurupovAvtoServModel.sp_upgraddiagrams" />
-          <EntitySetMapping Name="Log">
-            <EntityTypeMapping TypeName="ShurupovAvtoServModel.Log">
-              <MappingFragment StoreEntitySet="Log">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="LogoutReason" ColumnName="LogoutReason" />
-                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
-                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="ShurupovAvtoServModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
@@ -1120,6 +1108,18 @@
                 <ScalarProperty Name="IDPosition" ColumnName="IDPosition" />
                 <ScalarProperty Name="IDGender" ColumnName="IDGender" />
                 <ScalarProperty Name="IDEmployee" ColumnName="IDEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log">
+            <EntityTypeMapping TypeName="ShurupovAvtoServModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LogoutReason" ColumnName="LogoutReason" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

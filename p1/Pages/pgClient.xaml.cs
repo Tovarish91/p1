@@ -33,21 +33,26 @@ namespace p1.Pages
             switch (CB.SelectedIndex)
             {
                 case 0:
-                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.IDClient);
+                    DG.ItemsSource = Context.Client.ToList().Where(i => i.IDClient == Convert.ToInt32(tbSearch.Text));
                     break;
                 case 1:
-                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.FirstName);
+                    DG.ItemsSource = Context.Client.ToList().Where(i => i.FirstName == tbSearch.Text);
                     break;
                 case 2:
-                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.LastName);
+                    DG.ItemsSource = Context.Client.ToList().Where(i => i.LastName == tbSearch.Text);
                     break;
                 case 3:
-                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.Patronimic);
+                    DG.ItemsSource = Context.Client.ToList().Where(i => i.Patronimic == tbSearch.Text);
                     break;
                 case 4:
-                    DG.ItemsSource = Context.Client.ToList().OrderBy(i => i.Birthday);
+                    DG.ItemsSource = Context.Client.ToList().Where(i => i.Birthday == Convert.ToDateTime(tbSearch.Text));
                     break;
             }
+        }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Client.ToList();
         }
     }
 }

@@ -12,5 +12,6 @@ namespace p1.Classes
         public static Entities Context { get; } = new Entities();
         public static int IDChange = 0;
         public static bool Change = false;
+        public static string LoginNow;
     }
 }

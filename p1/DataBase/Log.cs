@@ -15,7 +15,7 @@ namespace p1.DataBase
     public partial class Log
     {
         public string Login { get; set; }
-        public string Time { get; set; }
+        public System.DateTime Time { get; set; }
         public System.DateTime EntryTime { get; set; }
         public System.DateTime OutTime { get; set; }
         public string LogoutReason { get; set; }

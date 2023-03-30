@@ -193,6 +193,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShurupovAvtoServDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Windows\winUser.xaml.cs">
+      <DependentUpon>winUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\winWork.xaml.cs">
       <DependentUpon>winWork.xaml</DependentUpon>
     </Compile>
@@ -272,6 +275,10 @@
       <DependentUpon>winAuth.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\winUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\winWork.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

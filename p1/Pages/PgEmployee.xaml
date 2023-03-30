@@ -9,21 +9,91 @@
       Title="PgEmployee">
 
     <Grid Background="White">
-        <DataGrid x:Name="DG" AutoGenerateColumns="False" SelectionChanged="DG_SelectionChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <Label Content="Employeers" Margin="0 0 15 0"></Label>
+            <Label Content="Search:"></Label>
+            <TextBox x:Name="tbSearch" Width="200"></TextBox>
+            <Label Content="In:"></Label>
+            <ComboBox x:Name="CB" Width="200" HorizontalAlignment="Left" SelectionChanged="CB_SelectionChanged">
+                <ComboBoxItem Content="ID"></ComboBoxItem>
+                <ComboBoxItem Content="First Name"></ComboBoxItem>
+                <ComboBoxItem Content="Last Name"></ComboBoxItem>
+                <ComboBoxItem Content="Patronimic"></ComboBoxItem>
+                <ComboBoxItem Content="Birthday"></ComboBoxItem>
+                <ComboBoxItem Content="Phone"></ComboBoxItem>
+                <ComboBoxItem Content="Email"></ComboBoxItem>
+                <ComboBoxItem Content="Adress"></ComboBoxItem>
+                <ComboBoxItem Content="Role"></ComboBoxItem>
+                <ComboBoxItem Content="Acces to system"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
+        </WrapPanel>
+        <CheckBox x:Name="chbGen" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Gender" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbPos" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Position" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbFirst" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="First Name" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbLast" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Last Name" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbPatr" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Patronimic" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbBirth" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Birthday" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbPhone" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Phone" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbEmail" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Email" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbAdr" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Adress" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbRole" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Role" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbPass" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Password" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <CheckBox x:Name="chbAccs" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
+        <Label Content="Access" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+        <DataGrid x:Name="DG" 
+                      AutoGenerateColumns="False" 
+                      SelectionChanged="DG_SelectionChanged" 
+                      Grid.Column="2"
+                      Grid.RowSpan="13"
+                      Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding IDEmployee}"/>
-                <DataGridTextColumn Header="Gender" Binding="{Binding Gender.Name}"/>
-                <DataGridTextColumn Header="Position" Binding="{Binding Position.Name}"/>
-                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Patronimic" Binding="{Binding Patronimic}"/>
-                <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Adress" Binding="{Binding Adress}"/>
-                <DataGridTextColumn Header="Role" Binding="{Binding Role}"/>
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
-                <DataGridTextColumn Header="Acces to system" Binding="{Binding Active}"/>
+                <DataGridTextColumn x:Name="dgtcID" Header="ID" Binding="{Binding IDEmployee}"/>
+                <DataGridTextColumn x:Name="dgtcGen" Header="Gender" Binding="{Binding Gender.Name}"/>
+                <DataGridTextColumn x:Name="dgtcPos" Header="Position" Binding="{Binding Position.Name}"/>
+                <DataGridTextColumn x:Name="dgtcFirst" Header="First Name" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn x:Name="dgtcLast" Header="Last Name" Binding="{Binding LastName}"/>
+                <DataGridTextColumn x:Name="dgtcPatr" Header="Patronimic" Binding="{Binding Patronimic}"/>
+                <DataGridTextColumn x:Name="dgtcBirth" Header="Birthday" Binding="{Binding Birthday}"/>
+                <DataGridTextColumn x:Name="dgtcPhone" Header="Phone" Binding="{Binding Phone}"/>
+                <DataGridTextColumn x:Name="dgtcEmail" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="dgtcAdr" Header="Adress" Binding="{Binding Adress}"/>
+                <DataGridTextColumn x:Name="dgtcRole" Header="Role" Binding="{Binding Role}"/>
+                <DataGridTextColumn x:Name="dgtcPass" Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn x:Name="dgtcAccs" Header="Access to system" Binding="{Binding Active}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

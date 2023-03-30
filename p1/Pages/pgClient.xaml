@@ -11,15 +11,18 @@
     <Grid Background="White">
         <StackPanel>
             <WrapPanel>
-                <Label Content="Clients" FontSize="15" Margin="0 0 15 0"></Label>
-                <Label Content="Sort by:"></Label>
+                <Label Content="Clients" Margin="0 0 15 0"></Label>
+                <Label Content="Search:"></Label>
+                <TextBox x:Name="tbSearch" Width="200"></TextBox>
+                <Label Content="In:"></Label>
             <ComboBox x:Name="CB" SelectionChanged="CB_SelectionChanged" Width="200" HorizontalAlignment="Left">
-                <ComboBoxItem Content="ID"></ComboBoxItem>
+                    <ComboBoxItem Content="ID"></ComboBoxItem>
                 <ComboBoxItem Content="First Name"></ComboBoxItem>
                 <ComboBoxItem Content="Last Name"></ComboBoxItem>
                 <ComboBoxItem Content="Patronimic"></ComboBoxItem>
                 <ComboBoxItem Content="Birthday"></ComboBoxItem>
             </ComboBox>
+                <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
             </WrapPanel>
             <DataGrid x:Name="DG" AutoGenerateColumns="False" Grid.Row="1">
             <DataGrid.Columns>

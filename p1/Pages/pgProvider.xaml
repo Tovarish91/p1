@@ -9,7 +9,26 @@
       Title="pgProvider">
 
     <Grid Background="White">
-        <DataGrid x:Name="DG" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.ColumnSpan="3">
+            <Label Content="Providers" Margin="0 0 15 0"></Label>
+            <Label Content="Search:"></Label>
+            <TextBox x:Name="tbSearch" Width="200"></TextBox>
+            <Label Content="In:"></Label>
+            <ComboBox x:Name="CB" SelectionChanged="CB_SelectionChanged" Width="200" HorizontalAlignment="Left">
+                <ComboBoxItem Content="ID"></ComboBoxItem>
+                <ComboBoxItem Content="Name"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
+        </WrapPanel>
+
+        <DataGrid x:Name="DG" 
+                  AutoGenerateColumns="False"
+                  Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IDProvider}"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>

@@ -27,5 +27,30 @@ namespace p1.Pages
             InitializeComponent();
             DG.ItemsSource = Context.Gender.ToList();
         }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Gender.ToList();
+        }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (CB.SelectedIndex)
+            {
+                case 0:
+                    DG.ItemsSource = Context.Gender.ToList().Where(i => i.IDGender == Convert.ToInt32(tbSearch.Text));
+                    break;
+                case 1:
+                    DG.ItemsSource = Context.Gender.ToList().Where(i => i.Name == tbSearch.Text);
+                    break;
+            }
+        }
+
+        private void DG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBlock x = DG.Columns[0].GetCellContent(DG.Items[DG.SelectedIndex]) as TextBlock;
+            IDChange = Convert.ToInt32(x?.Text);
+            //MessageBox.Show(IDChange.ToString());
+        }
     }
 }

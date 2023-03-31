@@ -46,7 +46,7 @@ namespace p1.Pages
         {
             TextBlock x = DG.Columns[0].GetCellContent(DG.Items[DG.SelectedIndex]) as TextBlock;
             IDChange = Convert.ToInt32(x?.Text);
-            MessageBox.Show(IDChange.ToString());
+            //MessageBox.Show(IDChange.ToString());
         }
 
         private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,10 +89,6 @@ namespace p1.Pages
         private void btnAll_Click(object sender, RoutedEventArgs e)
         {
             DG.ItemsSource = Context.Employee.ToList();
-        }
-
-        private void chb_Unchecked(object sender, RoutedEventArgs e)
-        {
         }
 
         private void chbGen_Click(object sender, RoutedEventArgs e)
@@ -172,6 +168,14 @@ namespace p1.Pages
                     if (chbAccs.IsChecked == false) dgtcAccs.Visibility = Visibility.Hidden;
                     else dgtcAccs.Visibility = Visibility.Visible; break;
                 }
+        }
+        private void DG_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var Reason = true;
+
+            if (e.Row.GetIndex() <= Context.Employee.ToList().Count() - 1) Reason = Context.Employee.ToList().ElementAtOrDefault(e.Row.GetIndex()).Active;
+
+            if (Reason == false) e.Row.Background = new SolidColorBrush(Colors.Red);
         }
     }
 }

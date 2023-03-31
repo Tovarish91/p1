@@ -49,6 +49,7 @@
             </ComboBox>
             <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
         </WrapPanel>
+        
         <CheckBox x:Name="chbGen" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
         <Label Content="Gender" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></Label>
         <CheckBox x:Name="chbPos" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chbGen_Click"></CheckBox>
@@ -79,9 +80,10 @@
                       SelectionChanged="DG_SelectionChanged" 
                       Grid.Column="2"
                       Grid.RowSpan="13"
-                      Grid.Row="1">
+                      Grid.Row="1" 
+                      LoadingRow="DG_LoadingRow">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="dgtcID" Header="ID" Binding="{Binding IDEmployee}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding IDEmployee}"/>
                 <DataGridTextColumn x:Name="dgtcGen" Header="Gender" Binding="{Binding Gender.Name}"/>
                 <DataGridTextColumn x:Name="dgtcPos" Header="Position" Binding="{Binding Position.Name}"/>
                 <DataGridTextColumn x:Name="dgtcFirst" Header="First Name" Binding="{Binding FirstName}"/>

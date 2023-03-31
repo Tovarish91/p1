@@ -9,14 +9,61 @@
       Title="pgLogs">
 
     <Grid Background="White">
-        <DataGrid x:Name="DG" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <Label Content="Logs" Margin="0 0 15 0"></Label>
+            <Label Content="Search:"></Label>
+            <TextBox x:Name="tbSearch" Width="200"></TextBox>
+            <Label Content="In:"></Label>
+            <ComboBox x:Name="CB" Width="200" HorizontalAlignment="Left" SelectionChanged="CB_SelectionChanged">
+                <ComboBoxItem Content="ID"></ComboBoxItem>
+                <ComboBoxItem Content="Login"></ComboBoxItem>
+                <ComboBoxItem Content="Time in System"></ComboBoxItem>
+                <ComboBoxItem Content="Entry Time"></ComboBoxItem>
+                <ComboBoxItem Content="Out Time"></ComboBoxItem>
+                <ComboBoxItem Content="Logout Reason"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
+        </WrapPanel>
+
+        <CheckBox x:Name="chbLog" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbTIS" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbEtT" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbOtT" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbLtR" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+
+        <Label Content="Login" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Time in System" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Entry Time" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Out Time" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Logout Reason" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+        <DataGrid x:Name="DG" 
+                  AutoGenerateColumns="False" 
+                  LoadingRow="DG_LoadingRow"
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  Grid.RowSpan="5">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Login" Binding="{Binding Login}"/>
-                <DataGridTextColumn Header="Time in System" Binding="{Binding Time}"/>
-                <DataGridTextColumn Header="Entry Time" Binding="{Binding EntryTime}"/>
-                <DataGridTextColumn Header="Out Time" Binding="{Binding OutTime}"/>
-                <DataGridTextColumn Header="Logout Reason" Binding="{Binding LogoutReason}"/>
+                <DataGridTextColumn  Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn x:Name="dgtcLog" Header="Login" Binding="{Binding Login}"/>
+                <DataGridTextColumn x:Name="dgtcTIS" Header="Time in System" Binding="{Binding Time}"/>
+                <DataGridTextColumn x:Name="dgtcEtT" Header="Entry Time" Binding="{Binding EntryTime}"/>
+                <DataGridTextColumn x:Name="dgtcOtT" Header="Out Time" Binding="{Binding OutTime}"/>
+                <DataGridTextColumn x:Name="dgtcLtR" Header="Logout Reason" Binding="{Binding LogoutReason}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -35,7 +35,7 @@ namespace p1.Windows
             InitializeComponent();
             EntrTime = DateTime.Now;
             sw.Start();
-            Frame.Content = new pgClient();
+            Frame.Content = new PgEmployee();
 
             Thread thread = new Thread(() => 
             { 
@@ -93,10 +93,6 @@ namespace p1.Windows
                     frameNow = "Должность";
                     Frame.Content = new PgPosition();
                     break;
-                case "Сотрудник-Услуга":
-                    frameNow = "Сотрудник-Услуга";
-                    Frame.Content = new PgEmployeeService();
-                    break;
                 case "Услуга":
                     frameNow = "Услуга";
                     Frame.Content = new PgService();
@@ -105,21 +101,9 @@ namespace p1.Windows
                     frameNow = "Чек";
                     Frame.Content = new pgVoucher();
                     break;
-                case "Чек-Услуга":
-                    frameNow = "Чек-Услуга";
-                    Frame.Content = new pgVoucherService();
-                    break;
-                case "Чек-Продукт":
-                    frameNow = "Чек-Продукт";
-                    Frame.Content = new pgVoucherProduct();
-                    break;
                 case "Продукт":
                     frameNow = "Продукт";
                     Frame.Content = new pgProduct();
-                    break;
-                case "Продукт-Услуга":
-                    frameNow = "Продукт-Услуга";
-                    Frame.Content = new pgProductService();
                     break;
                 case "Поставщик":
                     frameNow = "Поставщик";
@@ -145,15 +129,35 @@ namespace p1.Windows
                 case "Сотрудник":
                     Frame.Content = new pgChAddEmployee();
                     break;
+                case "Гендер":
+                    Frame.Content = new pgChAddGender();
+                    break;
             }
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            Employee em = Context.Employee.First(i => i.IDEmployee == IDChange);
-            Context.Employee.Remove(em);
-            Context.SaveChanges();
-            Frame.Content = new PgEmployee();
+            switch (frameNow)
+            {
+                case "Клиент":
+                    Client cln = Context.Client.First(i => i.IDClient == IDChange);
+                    Context.Client.Remove(cln);
+                    Context.SaveChanges();
+                    Frame.Content = new pgClient();
+                    break;
+                case "Сотрудник":
+                    Employee em = Context.Employee.First(i => i.IDEmployee == IDChange);
+                    Context.Employee.Remove(em);
+                    Context.SaveChanges();
+                    Frame.Content = new PgEmployee();
+                    break;
+                case "Гендер":
+                    Gender g = Context.Gender.First(i => i.IDGender == IDChange);
+                    Context.Gender.Remove(g);
+                    Context.SaveChanges();
+                    Frame.Content = new PgGender();
+                    break;
+            }
         }
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

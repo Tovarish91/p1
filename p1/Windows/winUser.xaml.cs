@@ -32,7 +32,7 @@ namespace p1.Windows
             InitializeComponent();
             EntrTime = DateTime.Now;
             sw.Start();
-            Frame.Content = new pgClient();
+            Frame.Content = new PgEmployee();
 
             Thread thread = new Thread(() =>
             {
@@ -62,26 +62,14 @@ namespace p1.Windows
                 case "Должность":
                     Frame.Content = new PgPosition();
                     break;
-                case "Сотрудник-Услуга":
-                    Frame.Content = new PgEmployeeService();
-                    break;
                 case "Услуга":
                     Frame.Content = new PgService();
                     break;
                 case "Чек":
                     Frame.Content = new pgVoucher();
                     break;
-                case "Чек-Услуга":
-                    Frame.Content = new pgVoucherService();
-                    break;
-                case "Чек-Продукт":
-                    Frame.Content = new pgVoucherProduct();
-                    break;
                 case "Продукт":
                     Frame.Content = new pgProduct();
-                    break;
-                case "Продукт-Услуга":
-                    Frame.Content = new pgProductService();
                     break;
                 case "Поставщик":
                     Frame.Content = new pgProvider();

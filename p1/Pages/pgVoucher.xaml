@@ -9,12 +9,48 @@
       Title="pgVoucher">
 
     <Grid Background="White">
-        <DataGrid x:Name="DG" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.ColumnSpan="3">
+            <Label Content="Voucher" Margin="0 0 15 0"></Label>
+            <Label Content="Search:"></Label>
+            <TextBox x:Name="tbSearch" Width="200"></TextBox>
+            <Label Content="In:"></Label>
+            <ComboBox x:Name="CB" SelectionChanged="CB_SelectionChanged" Width="200" HorizontalAlignment="Left">
+                <ComboBoxItem Content="ID"></ComboBoxItem>
+                <ComboBoxItem Content="TotalCost"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnAll" Margin ="20 0 0 0" Content="All entries" Click="btnAll_Click"></Button>
+        </WrapPanel>
+
+        <CheckBox x:Name="chbEmp" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbClt" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+        <CheckBox x:Name="chbTct" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="chb_Click"></CheckBox>
+
+        <Label Content="Employee" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Client" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></Label>
+        <Label Content="Total cost" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+        <DataGrid x:Name="DG" 
+                  AutoGenerateColumns="False"
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  Grid.RowSpan="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IDVoucher}"/>
-                <DataGridTextColumn Header="Employee" Binding="{Binding Employee.LastName}"/>
-                <DataGridTextColumn Header="Client" Binding="{Binding Client.LastName}"/>
-                <DataGridTextColumn Header="TotalCost" Binding="{Binding TotalCost}"/>
+                <DataGridTextColumn x:Name="dgtcEmp" Header="Employee" Binding="{Binding Employee.LastName}"/>
+                <DataGridTextColumn x:Name="dgtcClt" Header="Client" Binding="{Binding Client.LastName}"/>
+                <DataGridTextColumn x:Name="dgtcTct" Header="TotalCost" Binding="{Binding TotalCost}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

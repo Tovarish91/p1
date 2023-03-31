@@ -26,6 +26,54 @@ namespace p1.Pages
         {
             InitializeComponent();
             DG.ItemsSource = Context.Voucher.ToList();
+
+            chbEmp.IsChecked = true;
+            chbClt.IsChecked = true;
+            chbTct.IsChecked = true;
+        }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (CB.SelectedIndex)
+            {
+                case 0:
+                    DG.ItemsSource = Context.Voucher.ToList().Where(i => i.IDVoucher == Convert.ToInt32(tbSearch.Text));
+                    break;
+                case 1:
+                    DG.ItemsSource = Context.Voucher.ToList().Where(i => i.TotalCost == Convert.ToInt32(tbSearch.Text));
+                    break;
+            }
+        }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Voucher.ToList();
+        }
+
+        private void chb_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            switch (cb.Name)
+            {
+                case "chbEmp":
+                    if (chbEmp.IsChecked == false) dgtcEmp.Visibility = Visibility.Hidden;
+                    else dgtcEmp.Visibility = Visibility.Visible;
+                    break;
+            }
+            switch (cb.Name)
+            {
+                case "chbClt":
+                    if (chbClt.IsChecked == false) dgtcClt.Visibility = Visibility.Hidden;
+                    else dgtcClt.Visibility = Visibility.Visible;
+                    break;
+            }
+            switch (cb.Name)
+            {
+                case "chbTct":
+                    if (chbTct.IsChecked == false) dgtcTct.Visibility = Visibility.Hidden;
+                    else dgtcTct.Visibility = Visibility.Visible; 
+                    break;
+            }
         }
     }
 }

@@ -26,6 +26,56 @@ namespace p1.Pages
         {
             InitializeComponent();
             DG.ItemsSource = Context.Product.ToList();
+
+            chbPrv.IsChecked= true;
+            chbNam.IsChecked= true;
+            chbCst.IsChecked = true;
+        }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (CB.SelectedIndex)
+            {
+                case 0:
+                    DG.ItemsSource = Context.Product.ToList().Where(i => i.IDProduct == Convert.ToInt32(tbSearch.Text));
+                    break;
+                case 1:
+                    DG.ItemsSource = Context.Product.ToList().Where(i => i.Name == tbSearch.Text);
+                    break;
+                case 2:
+                    DG.ItemsSource = Context.Product.ToList().Where(i => i.Cost == Convert.ToInt32(tbSearch.Text));
+                    break;
+            }
+        }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Product.ToList();
+        }
+
+        private void chb_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            switch (cb.Name)
+            {
+                case "chbPrv":
+                    if (chbPrv.IsChecked == false) dgtcPrv.Visibility = Visibility.Hidden;
+                    else dgtcPrv.Visibility = Visibility.Visible;
+                    break;
+            }
+            switch (cb.Name)
+            {
+                case "chbNam":
+                    if (chbNam.IsChecked == false) dgtcNam.Visibility = Visibility.Hidden;
+                    else dgtcNam.Visibility = Visibility.Visible;
+                    break;
+            }
+            switch (cb.Name)
+            {
+                case "chbCst":
+                    if (chbCst.IsChecked == false) dgtcCst.Visibility = Visibility.Hidden;
+                    else dgtcCst.Visibility = Visibility.Visible; break;
+            }
         }
     }
 }

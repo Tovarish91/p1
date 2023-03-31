@@ -34,10 +34,6 @@
                 <MenuItem Header="Услуга" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Чек" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Гендер" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Сотрудник-Услуга" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Чек-Услуга" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Чек-Продукт" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Продукт-Услуга" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="Должность" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Logs" Click="MenuItem_Click"></MenuItem>
@@ -55,7 +51,9 @@
 
         <Frame Name="Frame"
                NavigationUIVisibility="Hidden"
-               Grid.Row="2" Grid.RowSpan="2"></Frame>
+               Grid.Row="2"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></Frame>
 
         <WrapPanel Grid.Row="3" HorizontalAlignment="Center">
             <Button x:Name="btnChange" Content="Изменить" FontSize="20" Click="btnChangeAdd_Click"></Button>

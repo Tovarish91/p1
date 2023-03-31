@@ -27,5 +27,26 @@ namespace p1.Pages
             InitializeComponent();
             DG.ItemsSource = Context.Service.ToList();
         }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Service.ToList();
+        }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (CB.SelectedIndex)
+            {
+                case 0:
+                    DG.ItemsSource = Context.Service.ToList().Where(i => i.IDService == Convert.ToInt32(tbSearch.Text));
+                    break;
+                case 1:
+                    DG.ItemsSource = Context.Service.ToList().Where(i => i.Name == tbSearch.Text);
+                    break;
+                case 2:
+                    DG.ItemsSource = Context.Service.ToList().Where(i => i.Cost == Convert.ToInt32(tbSearch.Text));
+                    break;
+            }
+        }
     }
 }

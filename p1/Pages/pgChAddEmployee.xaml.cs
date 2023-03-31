@@ -62,7 +62,7 @@ namespace p1.Pages
             Employee emp = new Employee();
 
             emp.IDEmployee = Convert.ToInt32(tbID.Text);
-            emp.IDGender = CBGender.SelectedIndex + 1;
+            emp.IDGender = CBGender.SelectedIndex;
             emp.IDPosition = CBPosition.SelectedIndex + 1;
             emp.FirstName = tbFirst.Text;
             emp.LastName = tbLast.Text;

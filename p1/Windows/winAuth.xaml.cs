@@ -54,17 +54,17 @@ namespace p1
             //        {
             //            if (authRoleAdm != null)
             //            {
-            //                LoginNow = tboxAuthLogin.Text;
-            //                winWork ww = new winWork();
-            //                ww.Show();
-            //                this.Close();
+                            LoginNow = tboxAuthLogin.Text;
+                            winWork ww = new winWork();
+                            ww.Show();
+                            this.Close();
             //            }
             //            else
             //            {
-                            LoginNow = tboxAuthLogin.Text;
-                            winUser wu = new winUser();
-                            wu.Show();
-                            this.Close();
+                           // LoginNow = tboxAuthLogin.Text;
+                           // winUser wu = new winUser();
+                           // wu.Show();
+                           // this.Close();
             //            }
             //        }
             //        else MessageBox.Show("Captcha не совподает");

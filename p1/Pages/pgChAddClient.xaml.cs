@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,32 +27,41 @@ namespace p1.Pages
         public pgChAddClient()
         {
             InitializeComponent();
+            CBGender.ItemsSource = Context.Gender.ToList();
+            CBGender.SelectedIndex = 0;
+            CBGender.DisplayMemberPath = "Name";
+
+            if (Change == true)
+            {
+                Change = false;
+
+                tbID.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().IDClient.ToString();
+                CBGender.SelectedIndex = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().IDGender;
+                tbFirst.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().FirstName;
+                tbLast.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().LastName;
+                tbPatr.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().Patronimic;
+                DP.SelectedDate = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().Birthday;
+                tbPhone.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().Phone.ToString();
+                tbEmail.Text = Context.Client.ToList().Where(i => i.IDClient == IDChange).FirstOrDefault().Email;
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-          Client cl = new Client();
+            Client cln = new Client();
 
-            var cln = Context.Client.ToList().Where(i => i.IDClient == Convert.ToInt32(tboxID.Text)).FirstOrDefault();
-            if (cln != null) 
-            {
-                MessageBox.Show("!"); 
-            }
-            else
-            {
-                cl.IDClient = Convert.ToInt32(tboxID.Text);
-                cl.IDGender = Convert.ToInt32(tboxIDGender.Text);
-                cl.FirstName = tboxFirstName.Text;
-                cl.LastName = tboxLastName.Text;
-                cl.Patronimic = tboxPatronimic.Text;
-                cl.Birthday = Convert.ToDateTime(tboxBirthday.Text);
-                cl.Phone = Convert.ToInt32(tboxPhone.Text);
-                cl.Email = tboxEmail.Text;
+            cln.IDClient = Convert.ToInt32(tbID.Text);
+            cln.IDGender = CBGender.SelectedIndex;
+            cln.FirstName = tbFirst.Text;
+            cln.LastName = tbLast.Text;
+            cln.Patronimic = tbPatr.Text;
+            cln.Birthday = DP.SelectedDate.Value;
+            cln.Phone = Convert.ToInt32(tbPhone.Text);
+            cln.Email = tbEmail.Text;
 
-                Context.Client.Add(cl);
-                Context.SaveChanges();
-                MessageBox.Show("?");
-            }
+            Context.Client.AddOrUpdate(cln);
+            Context.SaveChanges();
+            MessageBox.Show("Successfully");
         }
     }
 }

@@ -146,17 +146,14 @@
     <Compile Include="Pages\pgChAddEmployee.xaml.cs">
       <DependentUpon>pgChAddEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\pgChAddGender.xaml.cs">
+      <DependentUpon>pgChAddGender.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\pgClient.xaml.cs">
       <DependentUpon>pgClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pgEmployee.xaml.cs">
       <DependentUpon>pgEmployee.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\pgEmployeeHiden.xaml.cs">
-      <DependentUpon>pgEmployeeHiden.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\pgEmployeeService.xaml.cs">
-      <DependentUpon>pgEmployeeService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pgGender.xaml.cs">
       <DependentUpon>pgGender.xaml</DependentUpon>
@@ -170,9 +167,6 @@
     <Compile Include="Pages\pgProduct.xaml.cs">
       <DependentUpon>pgProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\pgProductService.xaml.cs">
-      <DependentUpon>pgProductService.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\pgProvider.xaml.cs">
       <DependentUpon>pgProvider.xaml</DependentUpon>
     </Compile>
@@ -181,12 +175,6 @@
     </Compile>
     <Compile Include="Pages\pgVoucher.xaml.cs">
       <DependentUpon>pgVoucher.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\pgVoucherProduct.xaml.cs">
-      <DependentUpon>pgVoucherProduct.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\pgVoucherService.xaml.cs">
-      <DependentUpon>pgVoucherService.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShurupovAvtoServDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -207,19 +195,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\pgChAddGender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\pgClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\pgEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pgEmployeeHiden.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pgEmployeeService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,10 +223,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\pgProductService.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\pgProvider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -252,14 +232,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\pgVoucher.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pgVoucherProduct.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pgVoucherService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

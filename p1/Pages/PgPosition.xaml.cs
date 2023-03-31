@@ -27,5 +27,26 @@ namespace p1.Pages
             InitializeComponent();
             DG.ItemsSource = Context.Position.ToList();
         }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (CB.SelectedIndex)
+            {
+                case 0:
+                    DG.ItemsSource = Context.Position.ToList().Where(i => i.IDPosition == Convert.ToInt32(tbSearch.Text));
+                    break;
+                case 1:
+                    DG.ItemsSource = Context.Position.ToList().Where(i => i.Name == tbSearch.Text);
+                    break;
+                case 2:
+                    DG.ItemsSource = Context.Position.ToList().Where(i => i.Salary == Convert.ToInt32(tbSearch.Text));
+                    break;
+            }
+        }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            DG.ItemsSource = Context.Position.ToList();
+        }
     }
 }

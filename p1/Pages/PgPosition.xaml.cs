@@ -48,5 +48,12 @@ namespace p1.Pages
         {
             DG.ItemsSource = Context.Position.ToList();
         }
+
+        private void DG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBlock x = DG.Columns[0].GetCellContent(DG.Items[DG.SelectedIndex]) as TextBlock;
+            IDChange = Convert.ToInt32(x?.Text);
+            //MessageBox.Show(IDChange.ToString());
+        }
     }
 }

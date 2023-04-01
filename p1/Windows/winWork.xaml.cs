@@ -74,6 +74,7 @@ namespace p1.Windows
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            btnChange.Visibility = Visibility.Visible;
             MenuItem mi = sender as MenuItem;
             switch (mi.Header)
             {
@@ -112,6 +113,7 @@ namespace p1.Windows
                 case "Logs":
                     frameNow = "Logs";
                     Frame.Content = new pgLogs();
+                    btnChange.Visibility = Visibility.Hidden;
                     break;
             }
         }
@@ -131,6 +133,24 @@ namespace p1.Windows
                     break;
                 case "Гендер":
                     Frame.Content = new pgChAddGender();
+                    break;
+                case "Logs":
+                    Frame.Content = new pgChAddLogs();
+                    break;
+                case "Должность":
+                    Frame.Content = new pgChAddPosition();
+                    break;
+                case "Продукт":
+                    Frame.Content = new pgChAddProduct();
+                    break;
+                case "Поставщик":
+                    Frame.Content = new pgChAddProvider();
+                    break;
+                case "Услуга":
+                    Frame.Content = new pgChAddService();
+                    break;
+                case "Чек":
+                    Frame.Content = new pgChAddVoucher();
                     break;
             }
         }
@@ -156,6 +176,42 @@ namespace p1.Windows
                     Context.Gender.Remove(g);
                     Context.SaveChanges();
                     Frame.Content = new PgGender();
+                    break;
+                case "Logs":
+                    Log l = Context.Log.First(i => i.ID == IDChange);
+                    Context.Log.Remove(l);
+                    Context.SaveChanges();
+                    Frame.Content = new pgLogs();
+                    break;
+                case "Должность":
+                    Position p = Context.Position.First(i => i.IDPosition == IDChange);
+                    Context.Position.Remove(p);
+                    Context.SaveChanges();
+                    Frame.Content = new PgPosition();
+                    break;
+                case "Продукт":
+                    Product pt = Context.Product.First(i => i.IDProduct == IDChange);
+                    Context.Product.Remove(pt);
+                    Context.SaveChanges();
+                    Frame.Content = new pgProduct();
+                    break;
+                case "Поставщик":
+                    Provider pr = Context.Provider.First(i => i.IDProvider == IDChange);
+                    Context.Provider.Remove(pr);
+                    Context.SaveChanges();
+                    Frame.Content = new pgProvider();
+                    break;
+                case "Услуга":
+                    Service s = Context.Service.First(i => i.IDService == IDChange);
+                    Context.Service.Remove(s);
+                    Context.SaveChanges();
+                    Frame.Content = new PgService();
+                    break;
+                case "Чек":
+                    Voucher v = Context.Voucher.First(i => i.IDVoucher == IDChange);
+                    Context.Voucher.Remove(v);
+                    Context.SaveChanges();
+                    Frame.Content = new pgVoucher();
                     break;
             }
         }

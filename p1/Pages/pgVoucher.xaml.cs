@@ -32,6 +32,11 @@ namespace p1.Pages
             chbTct.IsChecked = true;
         }
 
+        private void DG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBlock x = DG.Columns[0].GetCellContent(DG.Items[DG.SelectedIndex]) as TextBlock;
+            IDChange = Convert.ToInt32(x?.Text);
+        }
         private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (CB.SelectedIndex)

@@ -24,7 +24,8 @@ namespace p1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public String cptch = "";
+        private String cptch = "";
+        private int count = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -43,54 +44,54 @@ namespace p1
         }
         private void btnAuth_Click(object sender, RoutedEventArgs e)
         {
-            //var authUser = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Password == tboxAuthPas.Text).FirstOrDefault();
-            //var authRoleAdm = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Role == "admin").FirstOrDefault();
-            //var authAccess = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Active == true).FirstOrDefault();
-            //if (authUser != null)
-            //{
-            //    if (authAccess != null)
-            //    { 
-            //        if (tboxCaptcha.Text == cptch)
-            //        {
-            //            if (authRoleAdm != null)
-            //            {
+            var authUser = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Password == tboxAuthPas.Text).FirstOrDefault();
+            var authRoleAdm = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Role == "admin").FirstOrDefault();
+            var authAccess = Context.Employee.ToList().Where(i => i.Email == tboxAuthLogin.Text && i.Active == true).FirstOrDefault();
+            if (authUser != null)
+            {
+                if (authAccess != null)
+                { 
+                    if (tboxCaptcha.Text == cptch)
+                    {
+                        if (authRoleAdm != null)
+                        {
                             LoginNow = tboxAuthLogin.Text;
                             winWork ww = new winWork();
                             ww.Show();
                             this.Close();
-            //            }
-            //            else
-            //            {
-                           // LoginNow = tboxAuthLogin.Text;
-                           // winUser wu = new winUser();
-                           // wu.Show();
-                           // this.Close();
-            //            }
-            //        }
-            //        else MessageBox.Show("Captcha не совподает");
-            //    }
-            //    else MessageBox.Show("Доступ заблокирован");
-            //}
-            //else
-            //{
-            //    count++;
-            //    MessageBox.Show("Неверный логин или пароль");
-            //    if (count >= 3)
-            //    {
-            //        btnAuth.IsEnabled = false;
-            //        Thread thread = new Thread(() =>
-            //        {
-            //            for (int i = 0; i < 10; i++)
-            //            {
-            //                Dispatcher.Invoke(() => LbTime.Content = "До повторной попытки осталось: " + (10 - i) + " секунд");
-            //                Thread.Sleep(1000);
-            //            }
-            //            Dispatcher.Invoke(() => LbTime.Content = "");
-            //            Dispatcher.Invoke(() => btnAuth.IsEnabled = true);
-            //        });
-            //        thread.Start();
-            //    }
-            //}        
+                        }
+                        else
+                        {
+                            LoginNow = tboxAuthLogin.Text;
+                            winUser wu = new winUser();
+                            wu.Show();
+                            this.Close();
+                        }
+                    }
+                    else MessageBox.Show("Captcha не совподает");
+                }
+                else MessageBox.Show("Доступ заблокирован");
+            }
+            else
+            {
+                count++;
+                MessageBox.Show("Неверный логин или пароль");
+                if (count >= 3)
+                {
+                    btnAuth.IsEnabled = false;
+                    Thread thread = new Thread(() =>
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Dispatcher.Invoke(() => LbTime.Content = "До повторной попытки осталось: " + (10 - i) + " секунд");
+                            Thread.Sleep(1000);
+                        }
+                        Dispatcher.Invoke(() => LbTime.Content = "");
+                        Dispatcher.Invoke(() => btnAuth.IsEnabled = true);
+                    });
+                    thread.Start();
+                }
+            }        
         }
     }
 }

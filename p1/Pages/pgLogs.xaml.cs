@@ -42,6 +42,7 @@ namespace p1.Pages
             if (e.Row.GetIndex() <= Context.Log.ToList().Count() - 1) Reason = Context.Log.ToList().ElementAtOrDefault(e.Row.GetIndex()).LogoutReason;
 
             if (Reason != "Window close") e.Row.Background = new SolidColorBrush(Colors.Red);
+            else e.Row.Background = new SolidColorBrush(Colors.White);
         }
 
         private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)

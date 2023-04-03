@@ -176,6 +176,7 @@ namespace p1.Pages
             if (e.Row.GetIndex() <= Context.Employee.ToList().Count() - 1) Reason = Context.Employee.ToList().ElementAtOrDefault(e.Row.GetIndex()).Active;
 
             if (Reason == false) e.Row.Background = new SolidColorBrush(Colors.Red);
+            else e.Row.Background = new SolidColorBrush(Colors.White);
         }
     }
 }
